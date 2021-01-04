@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html/style.html</title>
+    <style>
+        h1{
+            color:yellow;
+       }
+    </style>
+        <link rel="stylesheet" href="style.css">    
+
+    <style>
+        h1 {
+            color: white;
+            font-size: 15px;
+            background-color: navy;
+        }
+
+        header> h1 {
+            background-color: olive;
+        }
+
+        content h1 {
+            font-size: 10px;
+        }
+
+        #first {
+            color: orange;
+            /* #id 값 */
+        }
+
+        header .first {
+            color: yellow;
+            /* .은 클래스 너무너무중요 */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>스타일 지정1</h1>
+        <h1 id='first'>스타일 지정1-1</h1>
+        <div>
+            <h1 class="first">스타일 지정1-2</h1>
+        </div>
+    </header>
+<!--헤더기준으로 h1 과 div가 자식  -->
+<!--    >   은 자식입니다. 
+        .   은 자손입니다.
+        #hello (hello란 id값을 #hello 라 나타냄)
+        .first (first란 class를 .first라 나타냄) -->
+    <content>
+        <h1>스타일 지정2</h1>
+        <h1 class="first">스타일 지정2-1</h1>
+        <h1 id='first'>스타일 지정1-1</h1>
+    </content>
+
+    <!-- <script>
+        document.getElementById();
+// element를 하나 가져오겠다.
+
+        document.getElementByIdClassName('first');
+  //elementm를 여러개 가져오겠다.
+  </script> -->
+
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="show">
+        <!-- <h1>Sun</h1>
+        <h1>Mon</h1>
+        <h1>Tue</h1> -->
+        <script>
+            
+            // function createHeader(a,b,c){
+            //     let tdTag = document.createElement('th');
+            //     tdTag.innerHTML = a;
+            //     trTag.append(tdTag);
+            //     tableTag.append(trTag);
+            // }
+
+            // function createData() {
+
+            //     if(idx%7 ==0){
+            //         trTag = document.createElement('tr');
+            //     }
+            //     let tdTag = document.createElement('td');
+            //     tdTag.innerHTML = item;
+            //     trTag.append(tdTag);
+            //     tableTag.append(trTag);
+
+            // }
+
+            // let days= ['Sun','Mon','Tue','Wed','Thr','Fri','Sat']
+            // let dates= [];
+            // for (let i =1; i <31; i++){
+            //     dates.push(i);
+            // }
+            // let tableTag = document.createElement('table');
+            // //console.log(tableTag);
+            // tableTag.setAttribute('id','tbl')
+            // //setAttribute 속성값을 ( , ) 다음과 같이 지정해준다.
+            
+            // tableTag.setAttribute('border','1');
+            
+            // let trTag = document.createElement('tr');
+            // days.forEach(function(a,b,c){
+             
+            //     let tdTag = document.createElement('th');
+            //     tdTag.innerHTML = a;
+            //     trTag.append(tdTag);
+            //     tableTag.append(trTag);
+            // });
+
+            // dates.forEach(function(item, idx , ary){
+            //     ///idx index
+            //     if(idx%7 ==0){
+            //         trTag = document.createElement('tr');
+            //         // tdTag.setAttribute('style' , 'color:red');
+            //         // trTag.append(tdTag);
+            //     }
+            //     let tdTag = document.createElement('td');
+            //     tdTag.innerHTML = item;
+            //     trTag.append(tdTag);
+            //     tableTag.append(trTag);
+            // });
+            // document.getElementById('show').append(tableTag);
+
+            //forEach(function(item, idx , ary) 이거를 
+            //forEach(function(a,b , c) 로 써줘도 됨. 정의 된 규칙임.
+            // 왼쪽부터 값, 번호 , 배열을 나타냄.
+
+            // console.log(dates);
+
+            //table 구성
+            // console.clear();
+            // for ( day of dates){
+            //     console.log(day);
+            // }
+            let days = ['Sun','Mon','Tue','Wed','Thr','Fri','Sat'];
+
+            let dates = [];
+            for(let i=1; i<=35; i++){
+                //1일이 시작되는 요일
+                if(i-2 > 0 && i-2 < 32){
+                    dates.push(i-2);
+                }else{
+                    dates.push(' ');
+                }
+            }
+            let tableTag = document.createElement('table');
+            tableTag.setAttribute('border','10px');
+            tableTag.setAttribute('style','text-align:center');
+            tableTag.setAttribute('id','tbl');
+            let trTag = document.createElement('tr');
+            days.forEach(createHeader);     
+            //forEach(function(value,index,array){}); 랑 같은거임.
+            dates.forEach(createData);       
+            document.getElementById('show').append(tableTag);
+
+            function createHeader(a,b,c){
+                let thTag = document.createElement('th');
+                thTag.setAttribute('style','background-color: gray; color: white;');
+                thTag.innerHTML = a;
+                trTag.append(thTag);
+                tableTag.append(trTag);
+            }
+
+            function createData(a,b,c){
+                let tdTag = document.createElement('td');
+                tdTag.innerHTML = a;
+                if(b%7==0){
+                    trTag = document.createElement('tr');
+                    tdTag.setAttribute('style','color:red');
+                    trTag.append(tdTag);
+                }
+                if(b%7==6){
+                    tdTag.setAttribute('style','color:blue');
+                }
+                trTag.append(tdTag);
+                tableTag.append(trTag);
+            }
+    </script>
+    </div>
+<script>
+// let s1 = document.getElementById('show');
+// let h = document.getElementById('h1');
+// h.innerHTML = 'Hello';
+// console.log(h);
+// s1.append(h);
+
+// let days =['Sun','Mon','Tue','Wed','Thr','Fri','Sat'];
+// for(let i = 0; i<days.length; i++){
+//     let showAppend = document.getElementById('show');
+//     let h1Tag = document.createElement('h2');
+//     h1Tag.innerHTML=days[i];
+//     showAppend.append(h1Tag);
+
+// }
+// let showAppend = document.getElementById('show');
+// //div 아이디가 show인데 불러오는 거다.
+// let tableTag = document.createElement('table');
+// //createElement 는 만드는 기능 table을 만들겠다는거 선언
+// tableTag.setAttribute('border',1);
+// //setAttribute는 속성을 지정해주는 기능.
+
+// showAppend.append(tableTag);
+// //append는 추가하는 기능 테이블 선언한것을 붙여넣겠다. div에
+// let trTag=document.createElement('tr');
+// tableTag.append(trTag);
+// //
+// let days = ['Sun','Mon','Tue','Wed','Thr','Fri','Sat'];
+// for(let i = 0; i< days.length; i++){
+//     let tdTag =document.createElement('td');
+//     tdTag.innerHTML = days[i];
+//     //tdTag에 내용을 넣어 주겠다. 배열 i번쨰
+//     trTag.append(tdTag);
+//     //tr에 td를 하나더 추가하겠다.
+// }
+// trTag.append("");
+// let trTag1 = document.createElement('tr');
+// for(let i =1 ; i <=31; i++){
+//     let td = document.createElement('td');
+//     td.innerHTML =i;
+//     trTag.append(td);
+//     if(i%7==0){
+//         tableTag.append(trTag);
+//         trTag = document.createElement('tr');
+//     }
+// }
+// tableTag.append(trTag);
+// document.getElementById('show').append(tableTag);
+
+</script>
+</body>
+</html>

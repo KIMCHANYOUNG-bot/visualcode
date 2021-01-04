@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html/combinator.html</title>
+    <style>
+
+        h1 {
+            background-color: rgb(192, 71, 71);
+        }
+
+        div h1,h2,h3{
+            background-color: burlywood;
+        }
+        
+        div h2{
+            background-color: skyblue;
+        }
+
+        /* > _ ~ +  */
+        div+h1 + h2{
+            background-color: chartreuse;
+        }
+        /* div다음 h1다음 h2가 오면 h2에 다음 칼라를 넣어줄것이야!!! */
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Apple</h1>
+        <h2>Apple!</h2>
+<p>
+    <h1>Apple-1</h1>
+</p>
+    </div>
+    <h1>Apple-1</h1>
+    <h2>Bannanaanananannana</h2>
+    <h3>Orange~~~~~</h3>
+    <p>FruitSSSSS</p>
+</body>
+</html>

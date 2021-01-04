@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math.html</title>
+</head>
+<body>
+    <script>
+        let vals= [];
+                for( let i=0; i< 5; i++){
+            let val  =  Math.floor(Math.random()*6)+1; //    0<x<1
+            console.log(val);
+            vals[i] = val;
+            for(let j=0; j<1;j++){
+                if(vals[j]==val){
+                    i--;
+                    break;
+                }
+            }
+        }
+        console.log(vals);
+        //배열안에 중복된 값이 안들어가도록.
+        //예를들면 1,5,2,6,3,4
+
+    </script>
+</body>
+</html>

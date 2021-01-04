@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html/div.html</title>
+     <style>
+        div{
+            display: inline-block;
+            /*  div태그를 inline으로 바꿔주니 일자로 나옴 , 인라인 속성도 가지며 블락속성도 가짐 */
+        }
+        span{
+            display: block;
+            /* 반대도 마찬가지 */
+        } 
+    </style> 
+</head>
+<body>
+    <h3>공간분할태그</h3>
+    <div style="background: blueviolet;">첫번째영역</div>
+    <div style="background: chartreuse;">두번째영역</div>
+    <div style="background: crimson;">세번째영역</div>
+                                      <!-- 위는 컨텐츠영역 -->
+     
+    <h3>공간분할태그2</h3>
+    <span style="background:darkturquoise;">첫번째 영역</span>
+    <span style="background: deepskyblue;">두번째 영역</span>
+    <span style="background: cyan;">세번째 영역</span>
+    <!-- 컨텐츠 있는 영역만 차지, 공간이 있는 만큼 쓰고 영역이 늘어나면 밑으로 내려와용 -->
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html/position.html</title>
+    <style>
+        div{
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            color: white;
+            margin-bottom: 10px;
+        }
+        .container{
+            background-color: yellow;
+            position: static;
+            left:10px;
+            top: 10px;
+        }
+        .box{
+            background-color: blue;
+            position: fixed;
+            /* static 기초값 */
+            /* 페이지 전체에서 고정시키는게 스티키 */
+            /* fixed 페이지에서 고정 */
+            /* absoulute 컨테이너 안에서 절대적인 영역  */
+            left: 10px;
+            top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <article class='container'>
+        <div></div>
+        <div class='box'>Box</div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+
+    </article>
+</body>
+</html>

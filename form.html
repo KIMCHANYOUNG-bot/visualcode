@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form.html</title>
+</head>
+<body>
+    <table border='1' id="table">
+    <tr>
+    <td>
+         <label for="id">ID</label>
+         <input type="checkbox" name="id" id="id">
+    </td>   
+     <td>홍길동</td>
+     <td>20세</td>
+     <td>독서</td>
+     <td><button>OK</button></td>
+    </tr>
+    <tr>
+        <td>
+             <label for="id">ID</label>
+             <input type="checkbox" name="" id="">
+        </td>   
+         <td>홍길동</td>
+         <td>20세</td>
+         <td>친구놀리기</td>
+         <td><button>OK</button></td>
+        </tr>
+        
+        
+    </table>
+    <script>
+
+
+
+let trTag = document.createElement('tr');
+        document.getElementById('table').append(trTag);
+        let tdTag1 = document.createElement('td');
+        trTag.append(tdTag1);
+        let labelTag = document.createElement('label');
+        labelTag.setAttribute('for','idr');
+        //label에 <label for="idr"></label> 이렇게 작성됨
+        tdTag1.append(labelTag);
+        labelTag.innerHTML = 'ID ';
+        let inputTag = document.createElement('input');
+        inputTag.setAttribute('type','checkbox');
+        inputTag.setAttribute('name','idr');
+        inputTag.setAttribute('id','idr');
+        tdTag1.append(inputTag);
+        let tdTag2 = document.createElement('td');
+        trTag.append(tdTag2);
+        tdTag2.innerHTML = '동길홍';
+        let tdTag3 = document.createElement('td');
+        trTag.append(tdTag3);
+        tdTag3.innerHTML = '22세';
+        let tdTag4 = document.createElement('td');
+        trTag.append(tdTag4);
+        tdTag4.innerHTML = '음악';
+        let tdTag5 = document.createElement('td');
+        trTag.append(tdTag5);
+        let buttonTag = document.createElement('button');
+        tdTag5.append(buttonTag);
+        buttonTag.innerHTML = 'OK';
+
+
+        //이건 콘솔로그에 만드는건데? document에 적용도 되는구나....
+        let members = [];
+
+        for(let i=0; i<=3; i++){
+            let member={};
+            member.name = '홍길동'+i;
+            member.age = 20+i+'세';
+            member.hobby = '독서'+i;
+            
+            members.push(member);        
+        }
+        console.log(members);
+        
+        members.forEach(function(a,b,c){
+            let trTag = document.createElement('tr');
+            document.getElementById('table').append(trTag);
+            
+            let tdTag1 = document.createElement('td');
+            trTag.append(tdTag1);
+            let labelTag = document.createElement('label');
+            tdTag1.append(labelTag);
+            labelTag.setAttribute('for','id'+a);
+            labelTag.innerHTML = 'ID ';
+
+            let inputTag = document.createElement('input');
+            inputTag.setAttribute('type','checkbox');
+            inputTag.setAttribute('name','id'+b);
+            inputTag.setAttribute('id','id'+b);
+            tdTag1.append(inputTag);
+            
+            //뭘까???
+            for(field in a){ 
+                let tdTag2 = document.createElement('td');
+                tdTag2.innerHTML = a[field];
+                trTag.append(tdTag2);
+            }
+            //c는 뭘까??
+
+            //  document.getElementById('table').append(trTag);
+            let tdTag3 = document.createElement('td');
+            trTag.append(tdTag3);
+            let buttonTag = document.createElement('button');
+            tdTag3.append(buttonTag);
+            buttonTag.innerHTML = 'OK';
+            });
+       
+   
+
+ 
+ 
+ </script>
+</body>
+</html>

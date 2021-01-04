@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html/select.hrml1</title>
+</head>
+<body>
+    <h3>선택사항을 직접 입력하세요.</h3>
+    <form>
+        <label>전공 분야를 입력하세요.
+            <input type="text" list="majorlist" name="major">
+            <datalist id="majorlist">
+                <option value="Software">소프트웨어</option>
+                <option value="Robot"">로봇</option>
+                <option value="System">시스템</option>
+                <option value="Service">서비스</option>
+                <option value="Education">교육</option>
+            </datalist>
+            <p></p>
+            <input type="submit" value="완료">
+            <input type="reset"" value="다시작성">
+        </label>
+<!--  -->
+        <h3>오늘 날짜 입력</h3>
+        Today : <input type="date" name="Today">
+        <h3>프로젝트 수행 기간</h3>
+        From : <input type="date" name="from" min="2016-03-01" max="2016-12-31">
+        To : <input type="date" name="to" min="2018-03-01" max="2018-06-30">
+        <p></p>
+        <input type="submit" value="제출">
+        <input type="reset" value="다시작성">
+
+        <!--  -->
+        <h3>생일(년/월) 입력</h3>
+        생일 : <input type="month" name="birth">
+        <h3>주간계획(년/주) 입력</h3>
+        주간계획 : <input type="week" name="weekend">
+        <p></p>
+        <input type="submit" value="제출">
+        <input type="reset" value="다시작성">
+
+
+        <!--  -->
+
+    <h3>현재 시간 입력</h3>
+    Time : <input type="time" name="Now">
+    <h3>생일(년도, 월, 일, 시간) 입력</h3>
+    Birthday : <input type="datetime-local" name= "bdaytime">
+    <p></p>
+    <input type="submit" value="제출">
+    <input type="reset" value="다시작성">
+        <!--  -->
+        <h3>원하는 색상을 선택하세요.</h3>
+        <input type="color" name="color_value" value="#0000ff">
+        <p></p>
+        <input type="submit" value="선택완료">
+        <input type="reset" value="다시선택">
+        <!--  -->
+        <h3>나이를 입력하세요.</h3>
+        <input type="number" name="count" min="1" max="130">
+        <p></p>
+        <input type="submit" value="완료">
+        <input type="reset" value="초기화">
+        <!--  -->
+        <h3>0~100 범위에서  원하는 지점을 선택하세요.</h3>
+        <input type="range" name="point" min="0" max="100">
+        <p></p>
+        <input type="submit" value="완료">
+        <input type="reset" value="초기화">
+        <!--  -->
+        <h3>이메일을 정확하게 입력하세요.</h3>
+        이메일 : <input type="email" name="myemail">
+        <p></p>
+        <input type="su"
+<!--  -->
+</form>
+    </body>
+</html>

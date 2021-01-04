@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html/ex04.html</title>
+</head>
+<body>
+    <!-- ex04.jsp 입력값을 화면에 출력하도록 해보시오  /직업에 학생 주부 회사원 등 여러개 넣게 
+    -->
+    <form name= "frm" action= "input.jsp" method="get">
+        아이디: <input type="text" name="user_id" id="user_id">
+        <input type="submit" value="ID중복검사">
+        <p></p>생년월일:<input type="date" name="birth">
+        <p></p>성별:
+        <input type="radio" name="sex" id="male" value="male" checked>남자
+        <input type="radio" name="sex" id="female" value="female" >여자
+        <p>email:
+        <input type="email" name="myemail">
+        <p></p>메일수신:
+        <input type="radio" name="eAgree" id="수신동의" value="수신동의" checked>수신동의
+        <input type="radio" name="eAgree" id="수신거부" value="수신거부" checked>수신거부
+        <p></p>핸드폰:
+        <input type="phone">
+        
+    </form>
+</body>
+</html>

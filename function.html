@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function.html</title>
+</head>
+<body>
+    <div id="show">
+        <table>
+            <tr>
+              <td>이름</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        function sum(a,b){
+            return a+b;
+        }
+        
+        let result = sum(10, 20);
+
+        function showElement(){
+            let h1 = document.createElement('h1');
+            h1.innerHTML = 'Hello';
+            return h1;
+        }
+        result = showElement();
+//여기서부터 
+function Person(name,age ,hobby) {
+            this.name = name;
+            this.age = age;
+            this.hobby = hobby;
+        }
+        let persons = [];
+        Person.prototype.phone = '010-1111-2222';
+        Person.prototype.toString = function(){
+            return this.name + ', '+ this.age+', '
+            +this.hobby + ', ' +this.phone;
+        }
+
+
+        let p1 = new Person('Park' ,20, 'sleeping');
+        let p2 = new Person('Choi', 22 ,'reading');
+        persons.push(p1);
+        persons.push(p2);
+        persons.push(new Person('Kim', 25 , 'game'));
+//여기까지
+        function createTable(ary){
+            // persons => 배열
+            // 이름 , 나이  , 취미 , 연락처
+            let table = document.createElement('table');
+            table.setAttribute('border', '1');
+        
+            for(let i =0 ; i < ary.length; i++){
+            let trTag= document.createElement('tr');
+            fpr (field in ary[i])
+            }
+            console.log(table);
+            return table;
+        }
+        result = createTable(persons);
+        document.getElementById('show').innerHTML =result;
+
+
+        //람다 표현식 , function을 지웠다.
+        let x = (a,b)=>{
+            return a + b ;
+        }
+
+
+        // let x = function (a,b){
+        //     return a + b ;
+        // }
+        // x 라는 펑션에 10 ,15 값을 넣어서 consolelog
+        //에 출력하겠다는 뜻이다.
+        
+        let y =x; 
+        
+        console.log(x(10,15));
+        console.log(y(20,15));
+        
+        //arguments 안쓰면 function findMax(a,b,c,d,e,f,g){}
+        //이렇게 써줘야됨.
+        function findMax(){
+            console.log(arguments);
+            let max = 0;
+            for(let i = 0; i<arguments.length; i++){
+                if(arguments[i]> max){
+                max =arguments[i];                    
+                }
+            }
+            return max;
+        };
+        findMax(1,5,3,8,7,4,2);
+        console.log(result);
+    </script>
+</body>
+</html>

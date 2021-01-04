@@ -4,9 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>html/links.html</title>
+    <style>
+        a:link{
+            color: blueviolet;
+            text-decoration: underline;
+        }
+        a:visited{
+            color: cadetblue;
+        }
+        a:hover {
+            text-decoration: overline;
+        }
+        a:active{
+            color: yellow; 
+        }
+        ul>li:hover{
+            color: chocolate;
+            /* ul태그밑에 li요소들에 이색깔로 바꿔줌 */
+        }
+        ol>li:nth-last-child(2){
+            background: yellow;
+        }
+
+        li:first-child {
+            border: 6px dotted red;
+        }
+        li:last-child {
+            border: 6px dotted green;
+        }
+
+
+        li:nth-child(1){
+            border: 2px dotted red;
+        }
+
+        li:nth-of-type(2){
+            border: 2px dotted yellow;
+        }
+        li:nth-child(3){
+            border: 2px dotted green;
+        }
+
+        
+    </style>
 </head>
 <body>
-    <a href="link.html" target= "_blank"> link페이지</a>
+    <a href="link.html" target= "_self"> link페이지</a>
     <h1>UL 리스트</h1>
     
     <ul style="list-style-type: square;" >

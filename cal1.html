@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = 'show'>
+
+    <script>
+        let days= ['Sun','Mon','Tue','Wed','Thr','Fri','Sat'];
+
+        let dates = [];
+        for (let i=1; i <35; i++){
+            //1일이 시작되는 요일
+            if(i-2>0&& i-2 <32){
+
+                dates.push(i-2);
+            }else{
+                dates.push(' ');
+            }
+        }
+        let tableTag = document.createElement('table');
+        tableTag.setAttribute('border','10px');
+        tableTag.setAttribute('style','text-align: center');
+        tableTag.setAttribute('id','tbl');
+        let trTag = document.createElement('tr');
+        days.forEach(createHeader);
+        //forEach(function(value,index,array){});
+        dates.forEach(createData);
+        document.getElementById('show').append(tableTag);
+
+        function createHeader(a,b,c){
+            let thTag = document.createElement('th');
+            thTag.setAttribute('style','background-color: gray; color: white; ')
+            thTag.innerHTML = a;
+            trTag.append(thTag);
+            tableTag.append(trTag);
+        }
+
+        function createData(a,b,c){
+            let tdTag = document.createElement('td');
+            tdTag.innerHTML = a;
+            if(b%7==0){
+                trTag = document.createElement('tr');
+                tdTag.setAttribute('style','color:red');
+                trTag.append(tdTag);
+            }
+            if(b%7==6){
+                tdTag.setAttribute('style','color:blue');
+            }
+            trTag.append(tdTag);
+            tableTag.append(trTag);
+        }
+
+    </script>
+    </div>
+</body>
+</html>

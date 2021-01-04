@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boolean.html</title>
+</head>
+<body>
+    <script>
+        let trueOrFalse = new Boolean(10<9);
+        trueOrFalse = undefined;// undefine 이거나 null넣으면 값이 false가 된다.
+        if(trueOrFalse){
+            console.log('참');
+        }else{
+            console.log('거짓');
+        }
+
+        let val1 =100;
+        let val2 ='100';
+        if(!(val1===val2)){
+            //!() 괄호의 반대입니다. 라는 뜻.
+            //===값이랑 타입도 같이비교
+            //== 값만비교
+            //  val1 != val2 , !==
+            console.log('동일합니다.');
+        }  else{
+            console.log('다릅니다.');
+        }
+
+        let retult = val1 > 100 ? '100초과' : '100이하';
+        result = new String('hello');
+        result = new Number(10);
+        result = new Object();
+
+        result = {
+            name: 'Hong',
+            age: 20,
+            getName: function(){
+                return this.name;
+            },
+            getInfo: function(){
+                console.log(this.name + '_'+ this.age);
+                // return this.name +  ' _ ' +this.age;
+            },
+            get getAge() {
+                return this.age;
+            },
+            set setAge(age){
+                this.age = age;
+            }
+
+        }
+        result.setAge = 25;
+        //셋 호출은 조금 다르다. 이와같이.
+        //console.log(result.setAge(25)); 로는 출력이 안된다.
+        console.log(result.getAge);
+        result.hobby = 'reading';
+        result.getInfo();
+        delete result.hobby;
+
+        //배열일 경우 for of ...
+        //오브젝트일 경우 for in...
+
+        let person = {
+            name: 'Hwang',
+            age: 10,
+            address: 'Seoul'
+        }
+        let vals = Object.values(person);
+        // Object.values 오브젝트 값들을 가져오겠다라는 기능
+        vals = JSON.stringify(person);
+        console.log(vals);
+
+        let persons = [person];
+        
+        let person1 = {
+            name: 'Hwang',
+            age: 10,
+            address: 'Seoul'
+        }
+
+        persons.push (person1);
+
+        for(person of persons) {
+            //persons갯수 만큼 반복수행 하겠다.
+             //of 는 배열
+             for (field in person){
+                 console.log(field , '_' , person[field]);
+             }
+        }
+
+        // console.log(result.getName());
+        // console.log(result.getInfo())
+        // result.hobby = 'reading';
+
+        // let v = result;
+        // result.age = 15;
+
+        // console.log(v.name , v.age);
+
+        // result ='hello';
+        // v= result;
+        // result = 'world'
+        // console.log(v);
+    </script>
+</body>
+</html>

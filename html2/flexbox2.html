@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html2/flexbox2.html</title>
+<style>
+    .flex-container{
+        background-color: dodgerblue;
+        display: flex;
+    }
+    .flex-container > div{
+        background-color: #f1f1f1;
+        width: 40px;
+        /* margin: 10px; */
+        text-align: center;
+        font-size: 30px;
+        border: 1px dotted red;
+    }
+    .flex-container > div:nth-child(1){
+        order: 3;
+        flex-grow: 4;
+    }
+    .flex-container > div:nth-child(2){
+        order: 4;
+        flex-grow: 3;
+    }
+    .flex-container > div:nth-child(3){
+        order: 2;
+        flex-grow: 2;
+    }
+    .flex-container > div:nth-child(4){
+        order: 1;
+        flex-grow: 1;
+    }
+    /* order로 배치순서를 정할수있다  */
+</style>
+
+</head>
+<body>
+    
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+</html>
