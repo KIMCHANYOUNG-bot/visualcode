@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id= "show"></div>
+<script>
+    let xhtp = new XMLHttpRequest(); 
+    xhtp.onreadystatechange = function(){
+
+        // console.log(xhtp);
+        // console.log(xhtp.responseText);
+        // console.log(xhtp.readyState,xhtp.status); // ok상태=200 error 상태 = 404
+      if(xhtp.readyState==4 && xhtp.status ==200){ // ok 상태일때 입력 후 출력
+        //console.log(xhtp.responseXML);
+        let doc = xhtp.responseXML;
+        let result = doc.querySelectorAll('dataset>record');
+        console.log(result);
+
+      }
+      }
+</script>    
+</body>
+</html>

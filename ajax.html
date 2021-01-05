@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax.html</title>
+</head>
+<body>
+    <div id ="show"></div>
+    <script>
+       let xhtp = new XMLHttpRequest(); //+추가 XML=마크업 랭귀지
+        xhtp.onreadystatechange = function(){
+            // console.log(xhtp);
+            // console.log(xhtp.responseText);
+            //console.log(xhtp.readyState,xhtp.status); //OK상태=200 errer상태=404
+            if(xhtp.readyState == 4 && xhtp.status ==200){ //OK상태일때 입력 후 출력
+                //console.log(xhtp.responseXML);
+                let doc = xhtp.responseXML;
+                let result = doc.querySelectorAll('dataset>record');
+                //console.log(result); 
+                // console.log(result[0].childNodes);//원본인 dataset.xml파일에 줄바꿈을 안해줘서 노드들 사이에 text가 없음
+                let ulTag = document.createElement('ul');
+                document.getElementById('show').append(ulTag);
+                for(let i=0; i<result.length; i++){
+                    //for(let j=0; j<result[i].childNodes.length; j++){
+                        //console.log(result[i].childNodes[j].childNodes[0].nodeValue);
+                        let liTag = document.createElement('li');
+                        let str = 'No.'+result[i].childNodes[0].childNodes[0].nodeValue //
+                                    +' >> '+result[i].childNodes[1].childNodes[0].nodeValue //
+                                    +' '+result[i].childNodes[2].childNodes[0].nodeValue;
+                        let textNode = document.createTextNode(str);
+                        liTag.append(textNode);
+                        ulTag.append(liTag);
+                    //}
+                    //console.log('=========================');
+                }
+                // console.log(result[0].childNodes[0].childNodes[0].nodeValue);
+                // console.log(result[0].childNodes[1].childNodes[0].nodeValue);
+                // console.log(result[0].childNodes[2].childNodes[0].nodeValue);
+                // document.getElementById('show');
+                // show.innerHTML = xhtp.responseText;
+            }
+            let doc = xhtp.responseXML;
+		 let result = doc.getElementsByTagName('record');
+		 let tableTag = document.createElement('table');
+		 tableTag.setAttribute('border','1');
+		 for(let i =0; i< result.length; i++){
+			 let trTag = document.createElement('tr');
+			 for(let j=0; j <result[i].childNodes.length; j++){
+				 let tdTag = document.createElement('td');
+				 let str = result[i].childNodes[j].childNodes[0].nodeValue;
+				 let textNode = document.createTextNode(str);
+				 tdTag.appendChild(textNode);
+				 trTag.appendChild(tdTag);
+			 }
+			 tableTag.appendChild(trTag);
+		 }
+		 document.getElementById('show').appendChild(tableTag);
+        }
+        xhtp.open('get', 'dataset.xml'); //구글에서 mocharoo검색 임의의 dataset.xml파일 다운
+        xhtp.send();
+
+    </script>
+
+</body>
+</html>
