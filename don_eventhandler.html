@@ -9,14 +9,14 @@
     <button id="btn">Click</button>
     <script>
         let btn = document.getElementById("btn");
-        btn.addEventListner('click' , () => {
+        btn.addEventListener('click' , () => {
             window.alert('click');
         });
         btn.addEventListener('mouseover' , () => {
             btn.style.backgroundColor = 'yellow';
         });
         btn.addEventListener('mouseout', () =>{
-            btn.style.backgroundColor = '';
+            btn.style.backgroundColor = 'red';
         });
     </script>    
 </body>
